@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect,HttpResponse
 from store.models import Product
 from .models import Cart,Cartitem
+from django.core.exceptions import ObjectDoesNotExist
 
 # Create your views here.
 
@@ -71,7 +72,7 @@ def cart(request,total=0,quantity=0,cart_items=None):
         grand_total=total+tax;    
 
 
-    except:
+    except ObjectDoesNotExist:
         pass    
     
 
