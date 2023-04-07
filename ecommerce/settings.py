@@ -76,6 +76,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'ecommerce.wsgi.application'
 AUTH_USER_MODEL='account.Account'
 
+# for django messages
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+   
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
