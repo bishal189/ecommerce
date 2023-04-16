@@ -12,36 +12,39 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title mb-4">Billing Address</h4>
-                        <form action="" method="POST">
+                        <form action="{% url 'checkout' %}" method="POST">
                               {% csrf_token %}
+                            
+
+
                             <div class="form-row">
-                                <div class="col form-group">
+                                <div class="col form-group" required>
                                     <label for="">First Name</label>
-                                    <input type="text" name="first_name" class="form-control" required>
+                                    {{form.first_name}}
                                 </div>
                                 <div class="col form-group">
                                     <label for="">Last Name</label>
-                                    <input type="text" name="Last_name" class="form-control" required>
+                                   {{form.last_name}}
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col form-group">
                                     <label for="">Email</label>
-                                    <input type="email" name="email" class="form-control" required>
+                                   {{form.email}}
                                 </div>
                                 <div class="col form-group">
                                     <label for="">Phone number</label>
-                                    <input type="number" name="Phone_number" class="form-control" required>
+                                    {{form.phone}}
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col form-group">
                                     <label for="">Address line 1</label>
-                                    <input type="text" name="address_line_1" class="form-control" required>
+                                    {{form.address_line_1}}
                                 </div>
                                 <div class="col form-group">
                                     <label for="">Address line 2</label>
-                                    <input type="text" name="address_line_2" class="form-control">
+                                   {{form.address_line_2}}
 
                                 </div>
 
@@ -49,16 +52,16 @@
                             <div class="form-row">
                                 <div class="col form-group">
                                     <label for="">City</label>
-                                    <input type="text" name="city" class="form-control" required>
+                                   {{form.city}}
                                 </div>
                                 <div class="col form-group">
                                     <label for="">State</label>
-                                    <input type="text" name="state" class="form-control" required>
+                                    {{form.state}}
 
                                 </div>
                                 <div class="col form-group">
                                     <label for="">Country</label>
-                                    <input type="text" name="country" class="form-control" required>
+                                   {{form.country}}
 
 
                                 </div>
@@ -66,7 +69,7 @@
                             <div class="form-row">
                                 <div class="col form-group">
                                     <label for="">Order Note</label>
-                                    <textarea name="order_note"  rows="2" class="form-control"></textarea>
+                                    {{form.order_note}}
                                 </div>
                               
                             </div>
