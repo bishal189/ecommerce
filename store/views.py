@@ -59,7 +59,11 @@ def product_details(request,category_slug,product_slug):
         raise e;
 
     try:
-        orders=Order_Product.objects.filter(user=request.user,product_id=single_product.id).exists()
+        user=None
+        if request.user.is_authenticated:
+            user=request.user
+
+        orders=Order_Product.objects.filter(user=user,product_id=single_product.id).exists()
         
 
     except Order_Product.DoesNotExist:

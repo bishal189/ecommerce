@@ -4,7 +4,7 @@ from .forms import ResitrationForm
 from.models import Account
 from django.contrib import messages,auth
 from cart.models import Cart,Cartitem
-import requests
+# import request
 
 from django.contrib.auth.decorators import login_required
 
